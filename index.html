@@ -1,0 +1,31 @@
+<html>
+<head></head>
+
+<body onload="startTime()">
+
+<script>
+function startTime() {
+  const today = new Date();
+  let h = today.getHours();
+  let m = today.getMinutes();
+  let s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('txt').innerHTML =  h + ":" + m + ":" + s;
+  setTimeout(startTime, 1000);
+}
+
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+</script>
+
+<div id="txt"></div>
+<p>This is my MIT Week 3 Assignment #1 with realtime javascript clock. Thank you all.</p>
+<p>Best Regards, Lucas Gontijo</p>
+
+<!-- credits: W3Schools.com. URL: https://www.w3schools.com/js/tryit.asp?filename=tryjs_timing_clock -->
+
+</body>
+</html>
